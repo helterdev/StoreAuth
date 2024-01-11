@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --melanie-yellow: #f8e356;
+    --melanie-red: #ff4f8b;
+    --melanie-purple: #e3b1f6;
+}
+
+body{
+    background-color: white;
+    color: black;
+}
+
+.form-cover {
+    /* background: linear-gradient( 170deg,var(--melanie-yellow), var(--melanie-red), var(--melanie-purple)); */
+    background-image: url('../../public/register.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
