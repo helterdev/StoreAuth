@@ -34,8 +34,11 @@ export const register = async (req: Request, res: Response) => {
         updatedAt: createUser.updatedAt,
       },
     });
+    
   } catch (error) {
-    console.log(error);
+    return res.status(500).send({
+      error
+    })
   }
 };
 

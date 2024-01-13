@@ -9,6 +9,9 @@
   height: 50px;
   width: 100%;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-submit:hover {

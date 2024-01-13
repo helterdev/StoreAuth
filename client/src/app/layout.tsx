@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
-import { Navbar } from '@/components/Navbar/Navbar';
+import { LoadingProvider } from '@/context/LoadingContex';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 const montserrat = Montserrat({
@@ -24,7 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        {children}
+        <LoadingProvider>
+          {children}
+          <Toaster position="top-right" />
+        </LoadingProvider>
       </body>
     </html>
   );

@@ -1,7 +1,8 @@
+'use client'
 import { IoAtSharp, IoLockClosedOutline } from "react-icons/io5"
-import { Input } from "../UI/Input/Input"
 import { Button } from "../UI/Button/Button"
 import '../RegisterForm/Form.css';
+import '@/components/UI/Input/Input.css';
 import Link from "next/link";
 
 export const LoginForm = () => {
@@ -17,12 +18,7 @@ export const LoginForm = () => {
         </label>
       </div>
       <div>
-        <Input
-          icon={<IoAtSharp />}
-          type="email"
-          placeHolder="Enter your email"
-          id="email"
-        />
+
       </div>
       <div className="flex-column">
         <label htmlFor="password" id="password">
@@ -30,12 +26,7 @@ export const LoginForm = () => {
         </label>
       </div>
       <div>
-        <Input
-          icon={<IoLockClosedOutline />}
-          type="password"
-          placeHolder="Enter your password"
-          id="password"
-        />
+
       </div>
       <div className="flex-row">
         <div>
