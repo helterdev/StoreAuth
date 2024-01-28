@@ -35,7 +35,6 @@ const Formulario = ({ title }: FormProps) => {
   //CustomHooks Context
   const { isLoading, stopLoading } = useLoadingContext();
   const { saveUser, isAuthenticate, setIsAuthenticate } = useAuth();
-  console.log(isAuthenticate);
   //NotifyHook
   const notify = useNotify();
   //router

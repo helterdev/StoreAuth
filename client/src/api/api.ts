@@ -1,6 +1,7 @@
 import { InputsLogin, InputsRegister } from '@/interfaces/Data';
-import axios from './conifg';
-const BASE_URL = process.env.NEXT_PUBLIC_URL;
+import axios, { productsIntance } from './conifg';
+
+const url = process.env.NEXT_PUBLIC_PRODUCTS_API || '';
 
 export const userRegister = async (data: InputsRegister) => {
   const response = await axios.post(`/register`, data);
@@ -10,4 +11,8 @@ export const userRegister = async (data: InputsRegister) => {
 
 export const loginRequest = async (data: InputsLogin) => {
   return await axios.post(`/login`, data);
+};
+
+export const allProducts = async () => {
+  return await productsIntance.get(process.env.NEXT_PUBLIC_API as string);
 };

@@ -28,7 +28,7 @@ export const LoginForm = () => {
       redirect: false,
     });
     if (response?.ok) {
-      return router.push('/dashboard');
+      return router.push('/home');
     }
   };
 
