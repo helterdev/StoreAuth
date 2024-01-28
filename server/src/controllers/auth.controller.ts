@@ -34,11 +34,10 @@ export const register = async (req: Request, res: Response) => {
         updatedAt: createUser.updatedAt,
       },
     });
-    
   } catch (error) {
     return res.status(500).send({
-      error
-    })
+      error,
+    });
   }
 };
 
@@ -52,16 +51,12 @@ export const login = async (req: Request, res: Response) => {
     }
     const userFind = await UserModel.findOne({ email });
     if (!userFind) {
-      return res.status(400).json({
-        message: 'Usuario no encontrado',
-      });
+      return res.status(400).send('Usuario no registrado');
     }
 
     const isMatch = await bycrypt.compare(password, userFind.password);
     if (!isMatch) {
-      return res.status(400).send({
-        message: 'Invalid Password',
-      });
+      return res.status(400).send('Invalid Password');
     }
 
     //creacion del token
@@ -88,7 +83,6 @@ export const logout = async (req: Request, res: Response) => {
 };
 
 export const profile = async (req: Request, res: Response) => {
-  
   const { id } = req.user;
   const userFound = await UserModel.findById(id);
   if (!userFound) {

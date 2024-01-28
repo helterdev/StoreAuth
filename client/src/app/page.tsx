@@ -20,16 +20,14 @@ export default function Home() {
     };
   }, []);
   if (width === null) {
-    return (
-     <></>
-    );
+    return <></>;
   }
   return (
-    <main className="h-screen flex justify-center items-center form-cover">
+    <main className='h-screen flex justify-center items-center form-cover'>
       {width < 900 ? (
-        <div className="w-2/5">
+        <div className='w-2/5'>
           <Link href={'/register'}>
-            <Button message="Start App" type="button" />
+            <Button message='Start App' type='button' />
           </Link>
         </div>
       ) : (

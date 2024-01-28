@@ -3,6 +3,8 @@ import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { LoadingProvider } from '@/context/LoadingContex';
 import { Toaster } from 'sonner';
+import { AuthContextProvider } from '@/context/AuthContext';
+import SessionAuthProvider from '@/context/SessionAuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 const montserrat = Montserrat({
@@ -23,12 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={montserrat.className}>
-        <LoadingProvider>
-          {children}
-          <Toaster position="top-right" />
-        </LoadingProvider>
+        <SessionAuthProvider>
+          <LoadingProvider>
+            <AuthContextProvider>
+              {children}
+              <Toaster position='top-right' />
+            </AuthContextProvider>
+          </LoadingProvider>
+        </SessionAuthProvider>
       </body>
     </html>
   );
