@@ -10,7 +10,10 @@ Install Store with npm.
 1.- Clone the repository to a local folder on your PC.
 Enter this code in your terminal: 
 
-```git clone https://github.com/helterdev/StoreAuth.git```
+```
+git clone https://github.com/helterdev/StoreAuth.git
+
+```
 
 2.- Install the dependencies of both the client and server folders.
 ```
