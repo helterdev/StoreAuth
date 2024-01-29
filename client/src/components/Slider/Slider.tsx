@@ -11,7 +11,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '../UI/dropdown-menu';
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 
 export function Slider() {
   const { data: session, status } = useSession();
@@ -48,7 +48,10 @@ export function Slider() {
         <DropdownMenuItem>GitHub</DropdownMenuItem>
         <DropdownMenuItem disabled>Support</DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
+        <DropdownMenuItem
+          className=' hover:cursor-pointer'
+          onClick={() => signOut()}
+        >
           Log out
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
